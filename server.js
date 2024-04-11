@@ -5,6 +5,8 @@ const PORT = 3000;
 //A partir da URL Raiz:
 const rotas = {
   '/': 'Servidor - OKAY',
+  '/cachorros': 'Entrei na rota cachorro',
+  '/racas': 'Entrei na rota raca',
 };
 
 const server = http.createServer((req, res) => {
