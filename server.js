@@ -1,17 +1,17 @@
-import http from "http";
+import http from 'http';
 
 const PORT = 3000;
 
 //A partir da URL Raiz:
 const rotas = {
-    "/" : "Curso de Node.js",
-}
+  '/': 'Servidor - OKAY',
+};
 
 const server = http.createServer((req, res) => {
-    res.writeHead(200, {"Content-type" : "text/plain"});
-    res.end(rotas[req.url])
+  res.writeHead(200, { 'Content-type': 'text/plain' });
+  res.end(rotas[req.url]);
 });
 
 server.listen(PORT, () => {
-    console.log("Hello, world!")
-})
+  console.log('Hello, world!');
+});
