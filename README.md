@@ -3,3 +3,25 @@ Projeto de API REST com Node.js
 TELA DO POSTMAN:
 
 ![image](https://github.com/FabioIngenito/API-NODE/assets/24603753/446be562-b04c-45a5-9779-1e8562770d82)
+
+Username: fabioingenito
+Password: ODLR2oMJ6Esnuz9Z
+
+mongodb+srv://fabioingenito:<password>@cluster0.jb1bysb.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://fabioingenito:ODLR2oMJ6Esnuz9Z@cluster0.jb1bysb.mongodb.net/?retryWrites=true&w=majority
+
+---
+
+## config/dbConnect.js
+
+import mongoose from 'mongoose';
+
+async function conectarDataBase() {
+mongoose.connect(
+'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/?retryWrites=true&w=majority',
+);
+
+return mongoose.connection;
+}
+
+export default conectarDataBase;

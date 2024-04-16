@@ -1,4 +1,15 @@
 import express from 'express';
+import conectarDataBase from './config/dbConnect.js';
+
+const conexao = await conectarDataBase();
+
+conexao.on('erro', () => {
+  console.log('Erro de conexão.', erro);
+});
+
+conexao.on('open', () => {
+  console.log('Conexão feita com sucesso.');
+});
 
 const app = express();
 // Middleware
