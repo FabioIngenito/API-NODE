@@ -8,7 +8,7 @@ conexao.on('erro', () => {
   console.log('Erro de conexão.', erro);
 });
 
-conexao.once('open', () => {
+conexao.on('open', () => {
   console.log('Conexão feita com sucesso.');
 });
 
@@ -16,37 +16,36 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-// // ----------------------------------------------------
-// // Simulando "cachorros" para usar SEM Banco de Dados.
-// // ----------------------------------------------------
-// const cachorros = [
-//   {
-//     id: 1,
-//     raca: 'Poodle',
-//   },
-//   {
-//     id: 2,
-//     raca: 'Labrador',
-//   },
-// ];
+// ----------------------------------------------------
+// Simulando "cachorros" para usar SEM Banco de Dados.
+// ----------------------------------------------------
+const cachorros = [
+  {
+    id: 1,
+    raca: 'Poodle',
+  },
+  {
+    id: 2,
+    raca: 'Labrador',
+  },
+];
 
-// function buscarCachorro(id) {
-//   return cachorros.findIndex((cachorro) => {
-//     return cachorro.id === Number(id);
-//   });
-// }
-// // ----------------------------------------------------
+function buscarCachorro(id) {
+  return cachorros.findIndex((cachorro) => {
+    return cachorro.id === Number(id);
+  });
+}
+// ----------------------------------------------------
 
 app.get('/', (req, res) => {
   res.status(200).send('Curso de Node.js - EXPRESS');
 });
 
-app.get('/cachorros', async (req, res) => {
-  const listaCachorros = await cachorro.find({});
-  res.status(200).json(listaCachorros);
+app.get('/cachorros', (req, res) => {
+  res.status(200).json(cachorros);
 });
 
-app.get('/cachorros/:id', async (req, res) => {
+app.get('/cachorros/:id', (req, res) => {
   const index = buscarCachorro(req.params.id);
   res.status(200).json(cachorros[index]);
 });
