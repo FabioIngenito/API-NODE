@@ -37,9 +37,9 @@ app.use(express.json());
 // }
 // // ----------------------------------------------------
 
-app.get('/', (req, res) => {
-  res.status(200).send('Curso de Node.js - EXPRESS');
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send('Curso de Node.js - EXPRESS');
+// });
 
 // app.get('/cachorros', async (req, res) => {
 //   const listaCachorros = await cachorro.find({});
@@ -55,10 +55,10 @@ app.get('/racas', (req, res) => {
   res.status(200).send('Entrei na rota raca - EXPRESS');
 });
 
-app.post('/cachorros', (req, res) => {
-  cachorros.push(req.body);
-  res.status(201).send('Cachorro inserido com sucesso! - EXPRESS');
-});
+// app.post('/cachorros', (req, res) => {
+//   cachorros.push(req.body);
+//   res.status(201).send('Cachorro inserido com sucesso! - EXPRESS');
+// });
 
 // UPDATE .put - atualiza
 // UPDATE .patch - remendo (consertar somente uma pequena parte
