@@ -1,4 +1,4 @@
-import mongoose, { version } from 'mongoose';
+import mongoose from 'mongoose';
 
 const cachorroSchema = new mongoose.Schema(
   {
@@ -12,6 +12,6 @@ const cachorroSchema = new mongoose.Schema(
   { versionKey: false },
 );
 
-const cachorro = mongoose.model('cachorros');
+const cachorro = mongoose.model('cachorros', cachorroSchema);
 
 export default cachorro;

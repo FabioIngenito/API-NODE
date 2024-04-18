@@ -18,10 +18,19 @@ import mongoose from 'mongoose';
 
 async function conectarDataBase() {
 mongoose.connect(
-'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/?retryWrites=true&w=majority',
+'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/senacPetShop?retryWrites=true&w=majority',
 );
 
 return mongoose.connection;
 }
 
 export default conectarDataBase;
+
+---
+
+Arquivo: ".env" na raiz:
+
+// Enviroment - Variáveis de ambiente
+
+PORT = 3000
+DB_CONNECTION_STRING = mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/senacPetShop?retryWrites=true&w=majority
