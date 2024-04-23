@@ -65,11 +65,11 @@ app.get('/racas', (req, res) => {
 // UPDATE .put - atualiza
 // UPDATE .patch - remendo (consertar somente uma pequena parte
 
-app.put('/cachorros/:id', (req, res) => {
-  const index = buscarCachorro(req.params.id);
-  cachorros[index].raca = req.body.raca;
-  res.status(200).json(cachorros);
-});
+// app.put('/cachorros/:id', (req, res) => {
+//   const index = buscarCachorro(req.params.id);
+//   cachorros[index].raca = req.body.raca;
+//   res.status(200).json(cachorros);
+// });
 
 app.delete('/cachorros/:id', (req, res) => {
   const index = buscarCachorro(req.params.id);
