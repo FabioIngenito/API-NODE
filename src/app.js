@@ -1,6 +1,7 @@
 import express from 'express';
 import conectarDataBase from './config/dbConnect.js';
-import cachorro from './models/Cachorro.js';
+//import cachorro from './models/Cachorro.js';
+import routes from './routes/index.js';
 
 const conexao = await conectarDataBase();
 
@@ -14,7 +15,8 @@ conexao.once('open', () => {
 
 const app = express();
 // Middleware
-app.use(express.json());
+//app.use(express.json());
+routes(app);
 
 // // ----------------------------------------------------
 // // Simulando "cachorros" para usar SEM Banco de Dados.

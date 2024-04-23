@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 
 const cachorroSchema = new mongoose.Schema(
   {
-    _id: { type: mongoose.Schema.Types.ObjectId },
     id: { type: mongoose.Schema.Types.String },
     nome: { type: mongoose.Schema.Types.String, required: true },
     raca: { type: String },
