@@ -15,11 +15,18 @@ mongodb+srv://fabioingenito:ODLR2oMJ6Esnuz9Z@cluster0.jb1bysb.mongodb.net/?retry
 ## config/dbConnect.js
 
 import mongoose from 'mongoose';
+import 'dotenv/config';
+
+// 'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/retryWrites=true&w=majority',
+// 'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/senacPetShop?retryWrites=true&w=majority',
+
+// async function conectarDataBase() {
+// mongoose.connect(
+// 'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/senacPetShop?retryWrites=true&w=majority',
+// );
 
 async function conectarDataBase() {
-mongoose.connect(
-'mongodb+srv://admin:admin123@cluster0.jb1bysb.mongodb.net/senacPetShop?retryWrites=true&w=majority',
-);
+mongoose.connect(process.env.DB_CONNECTION_STRING);
 
 return mongoose.connection;
 }
