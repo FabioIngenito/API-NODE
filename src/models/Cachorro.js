@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { tutorSchema } from './Tutor.js';
 
 const cachorroSchema = new mongoose.Schema(
   {
@@ -7,6 +8,7 @@ const cachorroSchema = new mongoose.Schema(
     raca: { type: String },
     idade: { type: mongoose.Schema.Types.Number },
     vacinado: { type: Boolean },
+    tutor: tutorSchema,
   },
   { versionKey: false },
 );
